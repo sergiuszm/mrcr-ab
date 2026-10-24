@@ -84,10 +84,13 @@ the results stay comparable with #921 and other published runs.
 
 ## Strata context configs
 
-`run-strata.sh a262k|b524k [N]` runs the 4-needle depth cells against the Strata lane on the
-desktop. Config A is the default 262144 context. Config B is 524288 with static YaRN factor 2, and
-it starts from `~/Models/strata/docker-compose.b524k.yml` (outside this repo). The script checks the
-served context before it sends a request.
+`run-strata.sh a262k|b524k [N]` runs the 4-needle depth cells against a Strata server. Config A is
+the default 262144 context. Config B is 524288 with static YaRN factor 2. Both configs are set in
+the Strata install, outside this repo. The script checks the served context before it sends a
+request.
+
+- To use another server, set `STRATA_BASE`. The default is `http://127.0.0.1:8080`.
+- To use another pack, set `STRATA_TOKENIZER` to the `tokenizer/` directory of that pack.
 
 ## Files
 

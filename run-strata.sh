@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
-# MRCR 4-needle cells against the Strata lane on this desktop (127.0.0.1:8080).
+# MRCR 4-needle cells against a Strata server.
 #
 #   run-strata.sh a262k [N]   config A (262144, no YaRN): 128K and 224K cells
 #   run-strata.sh b524k [N]   config B (524288, YaRN 2): 128K, 224K, 350K, 480K
+#
+# STRATA_BASE is the server (default http://127.0.0.1:8080). STRATA_TOKENIZER
+# is the pack's tokenizer/ directory, for exact offline token counts (default
+# the UD-Q6_K_XL pack under ~/Models/strata).
 #
 # N = samples per cell (default 20). The 128K/224K cells share one prompt cap
 # (245760 = 262144 - 16384 output) in both configs, so A and B get the same
@@ -13,8 +17,9 @@ cd "$(dirname "$0")"
 
 config="${1:?usage: run-strata.sh a262k|b524k [N]}"
 n="${2:-20}"
-base=http://127.0.0.1:8080
-tok=/home/serchio/Models/strata/data/packs/unsloth-ud-q6_k_xl/tokenizer
+base="${STRATA_BASE:-http://127.0.0.1:8080}"
+tok="${STRATA_TOKENIZER:-$HOME/Models/strata/data/packs/unsloth-ud-q6_k_xl/tokenizer}"
+[[ -f "$tok/vocab.json" ]] || { echo "no tokenizer at $tok (set STRATA_TOKENIZER)" >&2; exit 1; }
 
 stack_base="Qwen3.8-Flash-Next UD-Q6_K_XL, Strata 0.1.45, RTX 5090"
 case "$config" in
