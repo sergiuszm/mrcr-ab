@@ -36,7 +36,7 @@ because each one is larger than 100 MB.
 Give each run a unique label and a `--stack` description:
 
 ```sh
-.venv/bin/python -I mrcr_ab.py run --base http://192.168.100.30:9006 --model glm53-flash-nvfp4 \
+.venv/bin/python -I mrcr_ab.py run --base http://HOST:PORT --model MODEL_ID \
     --label glm-b12x-8n-400k \
     --stack "GLM-5.3-Flash NVFP4, vLLM b12x, TP2 on 2x GX10, MAXLEN 950000"
 ```
