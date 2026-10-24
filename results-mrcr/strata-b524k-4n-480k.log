@@ -1,0 +1,21 @@
+20 samples, 0 already done -> results-mrcr/strata-b524k-4n-480k.jsonl
+[1/20] 4n0-240 tok=479727 score=0.020 prefix=True finish=stop out=466 ttft=135.94s wall=142.61s
+[2/20] 4n0-274 tok=480526 score=0.080 prefix=True finish=stop out=761 ttft=136.04s wall=146.66s
+[3/20] 4n0-273 tok=478861 score=0.999 prefix=True finish=stop out=697 ttft=136.59s wall=146.17s
+[4/20] 4n0-264 tok=478426 score=1.000 prefix=True finish=stop out=773 ttft=136.37s wall=146.38s
+[5/20] 4n0-281 tok=477609 score=0.016 prefix=True finish=stop out=723 ttft=136.21s wall=145.68s
+[6/20] 4n0-220 tok=474652 score=0.997 prefix=True finish=stop out=603 ttft=136.86s wall=146.96s
+[7/20] 4n0-234 tok=471013 score=1.000 prefix=True finish=stop out=427 ttft=138.22s wall=145.07s
+[8/20] 4n0-225 tok=470244 score=0.999 prefix=True finish=stop out=375 ttft=136.69s wall=142.66s
+[9/20] 4n0-292 tok=491616 score=0.998 prefix=True finish=stop out=501 ttft=143.56s wall=150.62s
+[10/20] 4n0-204 tok=494855 score=0.047 prefix=True finish=stop out=876 ttft=144.24s wall=157.29s
+[11/20] 4n0-241 tok=463686 score=0.996 prefix=True finish=stop out=743 ttft=134.51s wall=145.81s
+[12/20] 4n0-244 tok=459999 score=0.999 prefix=True finish=stop out=581 ttft=133.14s wall=141.22s
+[13/20] 4n0-229 tok=458334 score=1.000 prefix=True finish=stop out=588 ttft=129.37s wall=137.16s
+[14/20] 4n0-212 tok=455617 score=1.000 prefix=True finish=stop out=837 ttft=137.88s wall=149.87s
+[15/20] 4n0-265 tok=454170 score=1.000 prefix=True finish=stop out=540 ttft=133.41s wall=142.53s
+[16/20] 4n0-285 tok=449660 score=0.999 prefix=True finish=stop out=679 ttft=129.37s wall=139.59s
+[17/20] 4n0-291 tok=449057 score=0.100 prefix=True finish=stop out=530 ttft=128.4s wall=137.46s
+[18/20] 4n0-258 tok=447720 score=1.000 prefix=True finish=stop out=656 ttft=128.39s wall=137.28s
+[19/20] 4n0-260 tok=442613 score=0.999 prefix=True finish=stop out=514 ttft=128.14s wall=136.39s
+[20/20] 4n0-202 tok=442554 score=0.998 prefix=True finish=stop out=476 ttft=126.29s wall=133.41s

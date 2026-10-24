@@ -1,0 +1,16 @@
+{
+  "label": "glm-b12x-8n-400k",
+  "date": "2026-10-24",
+  "stack": "GLM-5.3-Flash NVFP4 (local-inference-lab, snapshot 520de24e), vLLM b12x nightly-20260907 with MTP, TP2 on 2x GX10, MAXLEN 950000",
+  "base": "http://192.168.100.30:9006",
+  "model": "glm53-flash-nvfp4",
+  "needles": 8,
+  "target_tokens": 400000,
+  "n": 34,
+  "selection": "chars/4.8",
+  "max_prompt_tokens": null,
+  "effort": "high",
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "max_tokens": 16384
+}

@@ -1,0 +1,16 @@
+{
+  "label": "strata-a262k-4n-128k",
+  "date": "2026-10-24",
+  "stack": "Qwen3.8-Flash-Next UD-Q6_K_XL, Strata 0.1.45, RTX 5090, 262144 context, no rope scaling (config A)",
+  "base": "http://127.0.0.1:8080",
+  "model": "qwen3.8-flash-next-unsloth-ud-q6_k_xl",
+  "needles": 4,
+  "target_tokens": 128000,
+  "n": 20,
+  "selection": "tokens",
+  "max_prompt_tokens": 245760,
+  "effort": "high",
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "max_tokens": 16384
+}

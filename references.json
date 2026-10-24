@@ -1,0 +1,30 @@
+[
+  {
+    "source": "NDF 381350 #921 (technobuddha, 2026-10-24)",
+    "stack": "GLM-5.3-Flash, TensorFold (Mia AI Lab recipe v0.6.0), DENSE=fp8, KV fp8, DFlash2 k=7, SPILL_GIB=64, TP2 on 2x GX10",
+    "needles": 8,
+    "tokens": "355K-448K (~392K)",
+    "n": 34,
+    "mean": 0.548,
+    "correct": 18,
+    "prefix": 29,
+    "cuts": 4,
+    "reasoning_chars": "3.6K",
+    "s_per_request": 295,
+    "note": "effort high, T 1.0, top_p 0.95, max 16384; vs exlr8-k3 paired: +0.276 (+0.099, +0.462), McNemar 12/2 p=0.013"
+  },
+  {
+    "source": "NDF 381350 #921 (technobuddha, 2026-10-24)",
+    "stack": "GLM-5.3-Flash exlr8 k3 (kindlingai, mmastrac/spark-glm53:v29 = vLLM 0.30.1rc1 + mentat 0.17.1), MAX_MODEL_LEN 500000, TP2 on 2x GX10",
+    "needles": 8,
+    "tokens": "355K-448K (~392K)",
+    "n": 34,
+    "mean": 0.273,
+    "correct": 8,
+    "prefix": 28,
+    "cuts": 5,
+    "reasoning_chars": "5.9K",
+    "s_per_request": 214,
+    "note": "effort high, T 1.0, top_p 0.95, max 16384; very likely the same 34 prompts as our 8n runs, ids unproven"
+  }
+]
