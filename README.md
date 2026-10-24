@@ -103,3 +103,8 @@ request.
 | `SCORES.md` | Generated scoreboard |
 | `results-mrcr/` | One `.jsonl` (answers and grades), `.log` and `.meta.json` per run |
 | `data/` | The dataset parquet files (not in git) |
+
+## License
+
+MIT, see [LICENSE](LICENSE). The `openai/mrcr` dataset has its own MIT license and is not part of
+this repo.
