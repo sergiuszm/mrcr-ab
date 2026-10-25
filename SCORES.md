@@ -25,6 +25,7 @@ To add a run, give `mrcr_ab.py run` a `--stack` description. Then run `mrcr_ab.p
 | 2026-10-24 | `strata-b524k-4n-224k` | Qwen3.8-Flash-Next UD-Q6_K_XL, Strata 0.1.45, RTX 5090, 524288 context, static YaRN factor 2 (config B) | 4 | 212K-235K (222K) | 20 | 0.964 | 18/20 | 20/20 | 20/20 | 0 | 928 | 69 | high, T 1.0, top_p 0.95, max 16384 |
 | 2026-10-24 | `strata-b524k-4n-350k` | Qwen3.8-Flash-Next UD-Q6_K_XL, Strata 0.1.45, RTX 5090, 524288 context, static YaRN factor 2 (config B) | 4 | 319K-384K (358K) | 20 | 0.864 | 17/20 | 17/20 | 20/20 | 0 | 1042 | 108 | high, T 1.0, top_p 0.95, max 16384 |
 | 2026-10-24 | `strata-b524k-4n-480k` | Qwen3.8-Flash-Next UD-Q6_K_XL, Strata 0.1.45, RTX 5090, 524288 context, static YaRN factor 2 (config B) | 4 | 443K-495K (467K) | 20 | 0.762 | 15/20 | 15/20 | 20/20 | 0 | 1049 | 144 | high, T 1.0, top_p 0.95, max 16384 |
+| 2026-10-25 | `ds41-maya-8n-400k` | DeepSeek-V4.1-Flash-1017 Maya-S (experts IQ2_XXS/IQ3_XXS, dense Q8_0, Engram Q6_K), project-maya v1.1.27 maya-ds4, RTX 5090 + 184 GiB RAM (CPU-lane experts read in place, --mmap-experts on), 524288 context (model native 1M), DSpark off, effort high = DeepSeek Think High (Max exists) | 8 | 355K-447K (392K) | 34 | 0.413 | 13/34 | 16/34 | 27/34 | 1 | 10323 | 254 | high, T 1.0, top_p 0.95, max 16384 |
 | 2026-10-24 | `glm-b12x-8n-400k` | GLM-5.3-Flash NVFP4 (local-inference-lab, snapshot 520de24e), vLLM b12x nightly-20260907 with MTP, TP2 on 2x GX10, MAXLEN 950000 | 8 | 355K-448K (392K) | 34 | 0.389 | 12/34 | 12/34 | 28/34 | 6 | 4338 | 310 | high, T 1.0, top_p 0.95, max 16384 |
 | 2026-10-24 | `strata-b524k-8n-400k` | Qwen3.8-Flash-Next UD-Q6_K_XL, Strata 0.1.45, RTX 5090, 524288 context, static YaRN factor 2 (config B) | 8 | 371K-467K (410K) | 34 | 0.522 | 16/34 | 16/34 | 34/34 | 0 | 1539 | 130 | high, T 1.0, top_p 0.95, max 16384 |
 
@@ -36,6 +37,8 @@ Every pair of runs that used the same sample ids. Mean diff is A minus B, with a
 |---|---|---|---|---|---|
 | `strata-a262k-4n-128k` | `strata-b524k-4n-128k` | 20 | +0.002 (-0.137, +0.144) | 1 / 0 (1.000) | 1 / 1 / 18 (1.000) |
 | `strata-a262k-4n-224k` | `strata-b524k-4n-224k` | 20 | -0.043 (-0.128, +0.000) | 0 / 1 (1.000) | 0 / 1 / 19 (1.000) |
+| `ds41-maya-8n-400k` | `glm-b12x-8n-400k` | 34 | +0.023 (-0.143, +0.187) | 5 / 4 (1.000) | 12 / 5 / 17 (0.143) |
+| `ds41-maya-8n-400k` | `strata-b524k-8n-400k` | 34 | -0.110 (-0.284, +0.065) | 4 / 7 (0.549) | 5 / 12 / 17 (0.143) |
 | `glm-b12x-8n-400k` | `strata-b524k-8n-400k` | 34 | -0.133 (-0.295, +0.033) | 3 / 7 (0.344) | 3 / 16 / 15 (0.004) |
 
 ## External references

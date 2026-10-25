@@ -1,0 +1,16 @@
+{
+  "label": "ds41-maya-8n-400k",
+  "date": "2026-10-25",
+  "stack": "DeepSeek-V4.1-Flash-1017 Maya-S (experts IQ2_XXS/IQ3_XXS, dense Q8_0, Engram Q6_K), project-maya v1.1.27 maya-ds4, RTX 5090 + 184 GiB RAM (CPU-lane experts read in place, --mmap-experts on), 524288 context (model native 1M), DSpark off, effort high = DeepSeek Think High (Max exists)",
+  "base": "http://127.0.0.1:8150",
+  "model": "deepseek-v4.1-flash",
+  "needles": 8,
+  "target_tokens": 400000,
+  "n": 34,
+  "selection": "chars/4.8",
+  "max_prompt_tokens": null,
+  "effort": "high",
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "max_tokens": 16384
+}
