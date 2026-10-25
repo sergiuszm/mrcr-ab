@@ -1,0 +1,16 @@
+{
+  "label": "tf-mia060-8n-400k",
+  "date": "2026-10-25",
+  "stack": "GLM-5.3-Flash EXL3 4bpw (Mia-AiLab, rev 078455ff), TensorFold v0.6.0 + 123 patches (Mia AI Lab recipe, image v0.6.0-789e8f3bdfa2), DENSE=fp8, KV fp8, DFlash2 bf582e4e fnc7:0.3, SPILL_GIB 64, PARALLEL 4, TP2 on 2x GX10, context 1048576",
+  "base": "http://192.168.100.12:8888",
+  "model": "GLM-5.3-Flash-EXL3",
+  "needles": 8,
+  "target_tokens": 400000,
+  "n": 34,
+  "selection": "chars/4.8",
+  "max_prompt_tokens": null,
+  "effort": "high",
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "max_tokens": 16384
+}

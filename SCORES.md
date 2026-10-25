@@ -27,6 +27,8 @@ To add a run, give `mrcr_ab.py run` a `--stack` description. Then run `mrcr_ab.p
 | 2026-10-24 | `strata-b524k-4n-480k` | Qwen3.8-Flash-Next UD-Q6_K_XL, Strata 0.1.45, RTX 5090, 524288 context, static YaRN factor 2 (config B) | 4 | 443K-495K (467K) | 20 | 0.762 | 15/20 | 15/20 | 20/20 | 0 | 1049 | 144 | high, T 1.0, top_p 0.95, max 16384 |
 | 2026-10-25 | `ds41-maya-8n-400k` | DeepSeek-V4.1-Flash-1017 Maya-S (experts IQ2_XXS/IQ3_XXS, dense Q8_0, Engram Q6_K), project-maya v1.1.27 maya-ds4, RTX 5090 + 184 GiB RAM (CPU-lane experts read in place, --mmap-experts on), 524288 context (model native 1M), DSpark off, effort high = DeepSeek Think High (Max exists) | 8 | 355K-447K (392K) | 34 | 0.413 | 13/34 | 16/34 | 27/34 | 1 | 10323 | 254 | high, T 1.0, top_p 0.95, max 16384 |
 | 2026-10-24 | `glm-b12x-8n-400k` | GLM-5.3-Flash NVFP4 (local-inference-lab, snapshot 520de24e), vLLM b12x nightly-20260907 with MTP, TP2 on 2x GX10, MAXLEN 950000 | 8 | 355K-448K (392K) | 34 | 0.389 | 12/34 | 12/34 | 28/34 | 6 | 4338 | 310 | high, T 1.0, top_p 0.95, max 16384 |
+| 2026-10-25 | `glm-b12x-8n-400k-d2` | GLM-5.3-Flash NVFP4 (local-inference-lab, snapshot 520de24e), vLLM b12x nightly-20260907 with MTP, TP2 on 2x GX10, MAXLEN 950000 | 8 | 355K-448K (392K) | 34 | 0.375 | 11/34 | 11/34 | 30/34 | 4 | 4792 | 329 | high, T 1.0, top_p 0.95, max 16384 |
+| 2026-10-25 | `tf-mia060-8n-400k` | GLM-5.3-Flash EXL3 4bpw (Mia-AiLab, rev 078455ff), TensorFold v0.6.0 + 123 patches (Mia AI Lab recipe, image v0.6.0-789e8f3bdfa2), DENSE=fp8, KV fp8, DFlash2 bf582e4e fnc7:0.3, SPILL_GIB 64, PARALLEL 4, TP2 on 2x GX10, context 1048576 | 8 | 355K-448K (392K) | 34 | 0.548 | 18/34 | 18/34 | 29/34 | 4 | 3610 | 293 | high, T 1.0, top_p 0.95, max 16384 |
 | 2026-10-24 | `strata-b524k-8n-400k` | Qwen3.8-Flash-Next UD-Q6_K_XL, Strata 0.1.45, RTX 5090, 524288 context, static YaRN factor 2 (config B) | 8 | 371K-467K (410K) | 34 | 0.522 | 16/34 | 16/34 | 34/34 | 0 | 1539 | 130 | high, T 1.0, top_p 0.95, max 16384 |
 
 ## Paired comparisons
@@ -38,8 +40,15 @@ Every pair of runs that used the same sample ids. Mean diff is A minus B, with a
 | `strata-a262k-4n-128k` | `strata-b524k-4n-128k` | 20 | +0.002 (-0.137, +0.144) | 1 / 0 (1.000) | 1 / 1 / 18 (1.000) |
 | `strata-a262k-4n-224k` | `strata-b524k-4n-224k` | 20 | -0.043 (-0.128, +0.000) | 0 / 1 (1.000) | 0 / 1 / 19 (1.000) |
 | `ds41-maya-8n-400k` | `glm-b12x-8n-400k` | 34 | +0.023 (-0.143, +0.187) | 5 / 4 (1.000) | 12 / 5 / 17 (0.143) |
+| `ds41-maya-8n-400k` | `glm-b12x-8n-400k-d2` | 34 | +0.038 (-0.142, +0.225) | 7 / 5 (0.774) | 10 / 9 / 15 (1.000) |
+| `ds41-maya-8n-400k` | `tf-mia060-8n-400k` | 34 | -0.136 (-0.300, +0.018) | 2 / 7 (0.180) | 7 / 9 / 18 (0.804) |
 | `ds41-maya-8n-400k` | `strata-b524k-8n-400k` | 34 | -0.110 (-0.284, +0.065) | 4 / 7 (0.549) | 5 / 12 / 17 (0.143) |
+| `glm-b12x-8n-400k` | `glm-b12x-8n-400k-d2` | 34 | +0.015 (-0.151, +0.180) | 5 / 4 (1.000) | 8 / 8 / 18 (1.000) |
+| `glm-b12x-8n-400k` | `tf-mia060-8n-400k` | 34 | -0.159 (-0.290, -0.048) | 0 / 6 (0.031) | 3 / 9 / 22 (0.146) |
 | `glm-b12x-8n-400k` | `strata-b524k-8n-400k` | 34 | -0.133 (-0.295, +0.033) | 3 / 7 (0.344) | 3 / 16 / 15 (0.004) |
+| `glm-b12x-8n-400k-d2` | `tf-mia060-8n-400k` | 34 | -0.173 (-0.339, -0.013) | 2 / 9 (0.065) | 8 / 9 / 17 (1.000) |
+| `glm-b12x-8n-400k-d2` | `strata-b524k-8n-400k` | 34 | -0.148 (-0.320, +0.018) | 3 / 8 (0.227) | 5 / 15 / 14 (0.041) |
+| `tf-mia060-8n-400k` | `strata-b524k-8n-400k` | 34 | +0.026 (-0.145, +0.197) | 6 / 4 (0.754) | 8 / 11 / 15 (0.648) |
 
 ## External references
 
