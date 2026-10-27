@@ -1,0 +1,16 @@
+{
+  "label": "ds41-tf-8n-400k",
+  "date": "2026-10-27",
+  "stack": "DeepSeek-V4.1-Flash-1017 Mia EAQ v1 EXL3 2.9 bpw (rev 45ee5d0f; routed experts 3 bit, 2 bit in layers 18-22; attention 5, shared 4-5, head 6; Engram unquantized), tensorfold-native 1.0.2 (TensorFold 629c524 + 26 patches, MiaAI-Lab recipe 27741e1, image exl3-tp2-928adbd0e57d), DSpark drafts on, PARALLEL 4, TP2 on 2x GX10, 524288 context (model native 1M), effort high = 75 (Think High), server top_k 20",
+  "base": "http://192.168.100.12:8888",
+  "model": "DeepSeek-V4.1-Flash-1017",
+  "needles": 8,
+  "target_tokens": 400000,
+  "n": 34,
+  "selection": "chars/4.8",
+  "max_prompt_tokens": null,
+  "effort": "high",
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "max_tokens": 16384
+}
